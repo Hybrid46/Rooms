@@ -12,39 +12,39 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RoomsApplication {
 
+    @Autowired
+    RoomRepository roomRepository;
+    @Autowired
+    SectorRepository sectorRepository;
+
     @PostConstruct
     public void start() {
 
-        //@Autowired
-        RoomRepository roomRepository;
-        //@Autowired
-        SectorRepository sectorRepository;
-        
         Sector sectorA = new Sector("Sector A", 1);
         Sector sectorB = new Sector("Sector B", 2);
         Sector sectorC = new Sector("Sector C", 3);
-        
+
         sectorRepository.save(sectorA);
         sectorRepository.save(sectorB);
         sectorRepository.save(sectorC);
-        
+
         Room roomA1 = new Room("Room A1", 'A', true, sectorA);
         Room roomA2 = new Room("Room A2", 'A', true, sectorA);
-        
+
         Room roomB1 = new Room("Room B1", 'B', true, sectorB);
         Room roomB2 = new Room("Room B2", 'B', true, sectorB);
         Room roomB3 = new Room("Room B3", 'B', true, sectorB);
-        
+
         Room roomC1 = new Room("Room C1", 'C', true, sectorC);
         Room roomC2 = new Room("Room C2", 'C', true, sectorC);
-        
+
         roomRepository.save(roomA1);
         roomRepository.save(roomA2);
-        
+
         roomRepository.save(roomB1);
         roomRepository.save(roomB2);
         roomRepository.save(roomB3);
-        
+
         roomRepository.save(roomC1);
         roomRepository.save(roomC2);
     }
