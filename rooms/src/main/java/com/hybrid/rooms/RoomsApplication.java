@@ -47,6 +47,11 @@ public class RoomsApplication {
 
         roomRepository.save(roomC1);
         roomRepository.save(roomC2);
+        
+        System.out.println("Rooms in sector A:");
+        for (Room room : roomRepository.findByCategoryOrderByNameAsc('A')){
+            System.out.println(room.toString());
+        }
     }
 
     public static void main(String[] args) {

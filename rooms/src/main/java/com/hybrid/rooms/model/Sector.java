@@ -43,4 +43,9 @@ public class Sector {
     public void setPermissionLevel(int permissionLevel) {
         this.permissionLevel = permissionLevel;
     }
+
+    @Override
+    public String toString() {
+        return "Sector{" + "id=" + id + ", name=" + name + ", permissionLevel=" + permissionLevel + '}';
+    }
 }

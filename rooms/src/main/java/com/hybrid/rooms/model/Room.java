@@ -70,4 +70,9 @@ public class Room {
     public void setSector(Sector sector) {
         this.sector = sector;
     }
+
+    @Override
+    public String toString() {
+        return "Room{" + "id=" + id + ", name=" + name + ", category=" + category + ", isOpen=" + isOpen + ", sector=" + sector + '}';
+    }
 }
