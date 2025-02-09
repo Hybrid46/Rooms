@@ -4,9 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-class Sector {
+@Table(name = "rm__sectors")
+public class Sector {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -39,5 +42,5 @@ class Sector {
 
     public void setPermissionLevel(int permissionLevel) {
         this.permissionLevel = permissionLevel;
-    }    
+    }
 }

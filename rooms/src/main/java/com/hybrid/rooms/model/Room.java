@@ -1,21 +1,26 @@
 package com.hybrid.rooms.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
-class Room {
+@Table(name = "rm__rooms")
+public class Room {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @Column(columnDefinition = "CHAR")
     private char category;
     private boolean isOpen;
-    
+
     @ManyToOne
     @JoinColumn(name = "sector_id")
     private Sector sector;
@@ -66,4 +71,3 @@ class Room {
         this.sector = sector;
     }
 }
-
